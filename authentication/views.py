@@ -5,7 +5,7 @@ from rest_framework.generics import GenericAPIView
 from rest_framework import (response, status, permissions)
 from authentication.serializers import RegisterApiViewSerializer, LoginApiViewSerializer
 
-# Create your views here.
+# Create your api views here.
 class RegisterApiView(GenericAPIView):
     authentication_classes = []
     serializer_class = RegisterApiViewSerializer
