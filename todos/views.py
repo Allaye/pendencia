@@ -33,7 +33,7 @@ class RetriveTodoApiView(ListAPIView):
 
 class CreateRetriveApiView(ListCreateAPIView):
     '''
-    ListcreateAPIVIEW is a shortcut class from DRF to create and retrive resources
+    ListcreateAPIVIEW is a shortcut class from DRF to create and retrive resources and others
     '''
     serializer_class = CreateTodoApiViewSerializer
     pagination_class = CustomPageNumberPagination
