@@ -6,7 +6,7 @@ from rest_framework.filters import SearchFilter, OrderingFilter
 from todos.serializers import CreateTodoApiViewSerializer
 from todos.models import Todo
 from todos.serializers import CreateTodoApiViewSerializer
-
+from todos.pagination import CustomPageNumberPagination
 
 class CreateTodoApiView(CreateAPIView):
     '''
@@ -36,6 +36,7 @@ class CreateRetriveApiView(ListCreateAPIView):
     ListcreateAPIVIEW is a shortcut class from DRF to create and retrive resources
     '''
     serializer_class = CreateTodoApiViewSerializer
+    pagination_class = CustomPageNumberPagination
     permission_classes = [IsAuthenticated]
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     filterset_fields = ['id', 'title', 'desc', 'is_complete']
